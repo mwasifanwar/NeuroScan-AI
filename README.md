@@ -38,26 +38,6 @@ Every pixel processed through it passes through a scientifically tuned visual pi
 
 ---
 
-## 📑 Table of Contents
-1. [Overview](#overview)
-2. [Key Features](#key-features)
-3. [System Architecture](#system-architecture)
-4. [Directory Structure](#directory-structure)
-5. [Tech Stack](#tech-stack)
-6. [Installation & Setup](#installation--setup)
-7. [Usage](#usage)
-    - [🖥 Streamlit Frontend](#streamlit-frontend)
-    - [⚙️ FastAPI Backend](#fastapi-backend)
-8. [API Endpoints](#api-endpoints)
-9. [Example Output](#example-output)
-10. [Docker Deployment](#docker-deployment)
-11. [Testing](#testing)
-12. [Future Enhancements](#future-enhancements)
-13. [Contributors](#contributors)
-14. [License](#license)
-
----
-
 ## 🧩 **Overview**
 
 **NeuroScan-AI** is not just another scanner — it’s an **intelligent document-perception system** engineered to make computers truly *understand* paper.  
@@ -155,30 +135,36 @@ NeuroScan-AI follows a clean, layered architecture that separates **experience**
 
 ## 🗂 **Directory Structure**
 
+```markdown
+<details>
+<summary><b>Click to view directory tree</b></summary>
+
+```text
 NeuroScan-AI/
 ├─ app/
 │  ├─ pipelines/
-│  │  ├─ scan.py           # perspective, deskew, edge pipeline
-│  │  ├─ enhance.py        # illumination, CLAHE, adaptive threshold, unsharp
-│  │  └─ ocr.py            # Tesseract OCR + searchable PDF bytes
+│  │  ├─ scan.py
+│  │  ├─ enhance.py
+│  │  └─ ocr.py
 │  ├─ utils/
-│  │  ├─ geometry.py       # order_points, four_point_transform, auto_deskew
-│  │  ├─ image_io.py       # safe decode/encode, RGB↔BGR helpers
-│  │  └─ pdf.py            # pdf2image conversion helpers
-│  ├─ config.py            # env-driven settings (OCR lang/OEM/PSM, tesseract path)
-│  ├─ schemas.py           # Pydantic models for API/pipeline options
-│  └─ main.py              # FastAPI app (health, /scan, /scan/pdf)
+│  │  ├─ geometry.py
+│  │  ├─ image_io.py
+│  │  └─ pdf.py
+│  ├─ config.py
+│  ├─ schemas.py
+│  └─ main.py
 ├─ web/
-│  └─ streamlit_app.py     # Streamlit UI (upload → preview → download)
+│  └─ streamlit_app.py
 ├─ reports/
-│  └─ architecture.png     # system diagram shown in README
+│  └─ architecture.png
 ├─ tests/
-│  ├─ test_geometry.py     # geometry utilities sanity checks
-│  └─ test_scan_pipeline.py# smoke tests for scan/enhance pipeline
-├─ requirements.txt        # pinned deps (FastAPI, Streamlit, OpenCV, Tesseract, etc.)
-├─ Dockerfile              # reproducible runtime (tesseract, poppler, libs)
-├─ .env.example            # sample env (TESSERACT_CMD, OCR_LANG, OCR_OEM, OCR_PSM)
-└─ README.md               # docs (you’re reading it!)
+│  ├─ test_geometry.py
+│  └─ test_scan_pipeline.py
+├─ requirements.txt
+├─ Dockerfile
+├─ .env.example
+└─ README.md
+</details> ```
 
 ## 🧰 **Tech Stack & Installation Guide**
 
