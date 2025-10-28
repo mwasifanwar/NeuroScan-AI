@@ -135,11 +135,10 @@ NeuroScan-AI follows a clean, layered architecture that separates **experience**
 
 ## 🗂 **Directory Structure**
 
-```markdown
+
 <details>
 <summary><b>Click to view directory tree</b></summary>
-
-```text
+  
 NeuroScan-AI/
 ├─ app/
 │  ├─ pipelines/
@@ -164,7 +163,7 @@ NeuroScan-AI/
 ├─ Dockerfile
 ├─ .env.example
 └─ README.md
-</details> ```
+</details> 
 
 ## 🧰 **Tech Stack & Installation Guide**
 
